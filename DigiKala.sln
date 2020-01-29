@@ -18,7 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{FF1D61
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{47DD3C83-F593-4156-9E29-D4385C2ED4FD}"
 	ProjectSection(SolutionItems) = preProject
+		usp_Insert_Category.sql = usp_Insert_Category.sql
 		usp_Select_Category.sql = usp_Select_Category.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{07A808D8-5BE5-420A-B2A0-19961D3C7D08}"
+	ProjectSection(SolutionItems) = preProject
+		udt_Insert_Category.sql = udt_Insert_Category.sql
 	EndProjectSection
 EndProject
 Global
@@ -40,6 +46,7 @@ Global
 		{3114BF92-540E-4C81-ABF2-C958C86B2B3E} = {27AC2DB5-E1B9-416B-B1AF-70725EC635F3}
 		{FF1D61EB-93BF-4C4C-9A16-BAF408B508AF} = {3114BF92-540E-4C81-ABF2-C958C86B2B3E}
 		{47DD3C83-F593-4156-9E29-D4385C2ED4FD} = {3114BF92-540E-4C81-ABF2-C958C86B2B3E}
+		{07A808D8-5BE5-420A-B2A0-19961D3C7D08} = {F11BE3B2-0673-4C5C-BCE4-F737CD4F2D05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9463A3A5-86C6-492D-B53D-D17A8746C06A}

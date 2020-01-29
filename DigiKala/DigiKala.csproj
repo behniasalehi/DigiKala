@@ -91,6 +91,7 @@
     <Compile Include="Model\DomainModel\POCO\CategoryCrud.cs" />
     <Compile Include="Model\Helper\ModelHelper.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\CategorySpHelper.cs" />
+    <Compile Include="Model\Helper\SPHelper\Category\InsertCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\SelectCategory.cs" />
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
@@ -101,6 +102,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\Category\CategoryViewModel.cs" />
+    <Compile Include="View\Validation.cs" />
     <EmbeddedResource Include="Category.resx">
       <DependentUpon>Category.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,7 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\DomainModel\DTO\MetaData\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

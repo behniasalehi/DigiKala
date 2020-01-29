@@ -21,12 +21,12 @@ namespace DigiKala.ViewModel.Category
             return Ref_CatgoryCrud.Select();
         }
         #endregion
-        //#region [- Save(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) -]
-        //public void Save(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
-        //{
-        //    Ref_CatgoryCrud.SaveBySp(listInsertCategory);
-        //}
-        //#endregion
+        #region [- Save(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) -]
+        public void Save(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
+        {
+            Ref_CatgoryCrud.SaveBySp(listInsertCategory);
+        }
+        #endregion
         //#region [- Edit(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory) -]
         //public void Edit(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory)
         //{

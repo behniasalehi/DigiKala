@@ -41,5 +41,31 @@ namespace DigiKala.Model.DomainModel.POCO
             }
         }
         #endregion
+        #region [- SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) -]
+        public void SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
+        {
+          
+            using (var context = new DTO.EF.DigiKalaEntities())
+            {
+                try
+                {
+                 context.Database.ExecuteSqlCommand(Model.Helper.SPHelper.Category.CategorySpHelper.Usp_Category_Insert,
+                  Model.Helper.SPHelper.Category.CategorySpHelper.SetInsertParameters(listInsertCategory)).ToString();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (context != null)
+                    {
+                        context.Dispose();
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }
