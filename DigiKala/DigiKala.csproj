@@ -94,6 +94,7 @@
     <Compile Include="Model\Helper\SPHelper\Category\DeleteCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\InsertCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\SelectCategory.cs" />
+    <Compile Include="Model\Helper\SPHelper\Category\UpdateCategory.cs" />
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
     </Compile>

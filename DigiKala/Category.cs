@@ -22,7 +22,8 @@ namespace DigiKala
             Ref_validation = new View.Validation();
             Ref_Category_Delete = new Model.Helper.SPHelper.Category.DeleteCategory();
             DeleteCategories = new List<Model.Helper.SPHelper.Category.DeleteCategory>();
-            DeleteItem = new List<string>();
+            Ref_UpdateCategory = new Model.Helper.SPHelper.Category.UpdateCategory();
+            Updates = new List<Model.Helper.SPHelper.Category.UpdateCategory>();
         }
         #endregion
         #region [- props -]
@@ -32,8 +33,8 @@ namespace DigiKala
         public View.Validation Ref_validation { get; set; }
         public Model.Helper.SPHelper.Category.DeleteCategory Ref_Category_Delete { get; set; }
         public List<Model.Helper.SPHelper.Category.DeleteCategory> DeleteCategories { get; set; }
-        public List<string> DeleteItem { get; set; }
-
+        public Model.Helper.SPHelper.Category.UpdateCategory Ref_UpdateCategory { get; set; }
+        public List<Model.Helper.SPHelper.Category.UpdateCategory> Updates { get; set; }
         #endregion
 
         #region [- ClearAll() -]
@@ -115,6 +116,7 @@ namespace DigiKala
         }
         #endregion
 
+        #region [- btnDelete_Click -]
         private void btnDelete_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
@@ -126,7 +128,40 @@ namespace DigiKala
             }
             dataGridView1.DataSource = Ref_CategoryViewModel.FillGrid();
         }
-        
-        
+
+        #endregion
+
+        #region [- btnEdit_Click -]
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            txtName.Text = dataGridView1[1, dataGridView1.CurrentRow.Index].Value.ToString();
+            txtDescriptions.Text = dataGridView1[1, dataGridView1.CurrentRow.Index].Value.ToString();
+            btnSaveChanges.Enabled = true;
+        }
+        #endregion
+
+        #region [- btnSaveChanges_Click -]
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            if (Ref_validation.CategoryNameValidation(txtName.Text) &&
+                Ref_validation.CategorydescriptionsValidation(txtDescriptions.Text))
+            {
+                Ref_UpdateCategory.Id = Convert.ToInt32(dataGridView1[0, dataGridView1.CurrentRow.Index].Value);
+                Ref_UpdateCategory.CategoryName = txtName.Text;
+                Ref_UpdateCategory.Descriptions = txtDescriptions.Text;
+                Updates.Add(Ref_UpdateCategory);
+                Ref_CategoryViewModel.Edit(Updates);
+                Updates.Clear();
+                dataGridView1.DataSource = Ref_CategoryViewModel.FillGrid();
+                ClearAll();
+                btnSaveChanges.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("please check fields");
+            }
+            
+        } 
+        #endregion
     }
 }
