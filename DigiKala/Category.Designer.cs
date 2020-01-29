@@ -38,6 +38,7 @@
             this.lblmessage = new System.Windows.Forms.Label();
             this.lblerrName = new System.Windows.Forms.Label();
             this.lblerrDescriptions = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(796, 225);
+            this.dataGridView1.Size = new System.Drawing.Size(796, 124);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnRefresh
@@ -129,11 +130,22 @@
             this.lblerrDescriptions.Size = new System.Drawing.Size(0, 17);
             this.lblerrDescriptions.TabIndex = 9;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(520, 193);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(115, 23);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Category
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 540);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblerrDescriptions);
             this.Controls.Add(this.lblerrName);
             this.Controls.Add(this.lblmessage);
@@ -165,5 +177,6 @@
         private System.Windows.Forms.Label lblmessage;
         private System.Windows.Forms.Label lblerrName;
         private System.Windows.Forms.Label lblerrDescriptions;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

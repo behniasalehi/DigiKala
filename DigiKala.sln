@@ -18,12 +18,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{FF1D61
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{47DD3C83-F593-4156-9E29-D4385C2ED4FD}"
 	ProjectSection(SolutionItems) = preProject
+		usp_Delete_Category.sql = usp_Delete_Category.sql
 		usp_Insert_Category.sql = usp_Insert_Category.sql
 		usp_Select_Category.sql = usp_Select_Category.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{07A808D8-5BE5-420A-B2A0-19961D3C7D08}"
 	ProjectSection(SolutionItems) = preProject
+		udt_Delete_Category.sql = udt_Delete_Category.sql
 		udt_Insert_Category.sql = udt_Insert_Category.sql
 	EndProjectSection
 EndProject

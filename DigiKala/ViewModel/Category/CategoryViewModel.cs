@@ -33,12 +33,12 @@ namespace DigiKala.ViewModel.Category
         //    Ref_CatgoryCrud.UpdateBySp(listUpdateCategory);
         //}
         //#endregion
-        //#region [- Delete(List<Model.Helper.SPHelper.Category.DeleteCategory> listDeleteCategory) -]
-        //public void Delete(List<Model.Helper.SPHelper.Category.DeleteCategory> listDeleteCategory)
-        //{
-        //    Ref_CatgoryCrud.DeleteBySp(listDeleteCategory);
-        //}
-        //#endregion
+        #region [- Delete(List<Model.Helper.SPHelper.Category.DeleteCategory> listDeleteCategory) -]
+        public void Delete(List<Model.Helper.SPHelper.Category.DeleteCategory> listDeleteCategory)
+        {
+            Ref_CatgoryCrud.DeleteBySp(listDeleteCategory);
+        }
+        #endregion
 
     }
 }

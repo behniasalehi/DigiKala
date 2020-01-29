@@ -20,6 +20,9 @@ namespace DigiKala
             Ref_InsertCategory = new Model.Helper.SPHelper.Category.InsertCategory();
             Categories = new List<Model.Helper.SPHelper.Category.InsertCategory>();
             Ref_validation = new View.Validation();
+            Ref_Category_Delete = new Model.Helper.SPHelper.Category.DeleteCategory();
+            DeleteCategories = new List<Model.Helper.SPHelper.Category.DeleteCategory>();
+            DeleteItem = new List<string>();
         }
         #endregion
         #region [- props -]
@@ -27,8 +30,22 @@ namespace DigiKala
         public Model.Helper.SPHelper.Category.InsertCategory Ref_InsertCategory { get; set; }
         public List<Model.Helper.SPHelper.Category.InsertCategory> Categories { get; set; }
         public View.Validation Ref_validation { get; set; }
+        public Model.Helper.SPHelper.Category.DeleteCategory Ref_Category_Delete { get; set; }
+        public List<Model.Helper.SPHelper.Category.DeleteCategory> DeleteCategories { get; set; }
+        public List<string> DeleteItem { get; set; }
+
         #endregion
 
+        #region [- ClearAll() -]
+        public void ClearAll()
+        {
+            txtName.Text = string.Empty;
+            txtDescriptions.Text = string.Empty;
+            lblerrName.Text = null;
+            lblerrDescriptions.Text = null;
+
+        } 
+        #endregion
         #region [- Category_Load -]
         private void Category_Load(object sender, EventArgs e)
         {
@@ -53,7 +70,9 @@ namespace DigiKala
                 Ref_InsertCategory.Descriptions = txtDescriptions.Text;
                 Categories.Add(Ref_InsertCategory);
                 Ref_CategoryViewModel.Save(Categories);
+                Categories.Clear();
                 dataGridView1.DataSource = Ref_CategoryViewModel.FillGrid();
+                ClearAll();
             }
             else
             {
@@ -93,7 +112,21 @@ namespace DigiKala
                 lblerrDescriptions.ForeColor = Color.Green;
 
             }
-        } 
+        }
         #endregion
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                int value = Convert.ToInt32(row.Cells[0].Value);
+                Ref_Category_Delete.Id = value;
+                DeleteCategories.Add(Ref_Category_Delete);
+                Ref_CategoryViewModel.Delete(DeleteCategories);
+            }
+            dataGridView1.DataSource = Ref_CategoryViewModel.FillGrid();
+        }
+        
+        
     }
 }

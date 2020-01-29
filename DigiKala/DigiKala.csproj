@@ -91,6 +91,7 @@
     <Compile Include="Model\DomainModel\POCO\CategoryCrud.cs" />
     <Compile Include="Model\Helper\ModelHelper.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\CategorySpHelper.cs" />
+    <Compile Include="Model\Helper\SPHelper\Category\DeleteCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\InsertCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\SelectCategory.cs" />
     <Compile Include="Product.cs">

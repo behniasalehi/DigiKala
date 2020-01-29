@@ -67,5 +67,30 @@ namespace DigiKala.Model.DomainModel.POCO
             }
         }
         #endregion
+        #region [- DeleteBySp(List<Model.Helper.SPHelper.Category.DeleteCategory> listDeleteCategory) -]
+        public void DeleteBySp(List<Model.Helper.SPHelper.Category.DeleteCategory> listDeleteCategory)
+        {
+            using (var context = new DTO.EF.DigiKalaEntities())
+            {
+                try
+                {
+                    context.Database.ExecuteSqlCommand(Model.Helper.SPHelper.Category.CategorySpHelper.Usp_Category_Delete,
+                  Model.Helper.SPHelper.Category.CategorySpHelper.SetDeleteParameters(listDeleteCategory));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (context != null)
+                    {
+                        context.Dispose();
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }
