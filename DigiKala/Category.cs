@@ -20,7 +20,7 @@ namespace DigiKala
             Ref_InsertCategory = new Model.Helper.SPHelper.Category.InsertCategory();
             Categories = new List<Model.Helper.SPHelper.Category.InsertCategory>();
             Ref_validation = new View.Validation();
-            Ref_Category_Delete = new Model.Helper.SPHelper.Category.DeleteCategory();
+           
             DeleteCategories = new List<Model.Helper.SPHelper.Category.DeleteCategory>();
             Ref_UpdateCategory = new Model.Helper.SPHelper.Category.UpdateCategory();
             Updates = new List<Model.Helper.SPHelper.Category.UpdateCategory>();
@@ -53,7 +53,6 @@ namespace DigiKala
             dataGridView1.DataSource = Ref_CategoryViewModel.FillGrid();
         }
         #endregion
-
         #region [- btnRefresh_Click -]
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -122,10 +121,12 @@ namespace DigiKala
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
                 int value = Convert.ToInt32(row.Cells[0].Value);
+                Ref_Category_Delete = new Model.Helper.SPHelper.Category.DeleteCategory();
                 Ref_Category_Delete.Id = value;
                 DeleteCategories.Add(Ref_Category_Delete);
-                Ref_CategoryViewModel.Delete(DeleteCategories);
+               
             }
+            Ref_CategoryViewModel.Delete(DeleteCategories);
             dataGridView1.DataSource = Ref_CategoryViewModel.FillGrid();
         }
 
