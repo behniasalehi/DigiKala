@@ -14,6 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{FF1D61EB-93BF-4C4C-9A16-BAF408B508AF}"
 	ProjectSection(SolutionItems) = preProject
 		usp_Create_Category_Table.sql = usp_Create_Category_Table.sql
+		usp_Create_Product_Table.sql = usp_Create_Product_Table.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{47DD3C83-F593-4156-9E29-D4385C2ED4FD}"

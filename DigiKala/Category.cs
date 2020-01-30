@@ -17,12 +17,11 @@ namespace DigiKala
         {
             InitializeComponent();
             Ref_CategoryViewModel = new ViewModel.Category.CategoryViewModel();
-            Ref_InsertCategory = new Model.Helper.SPHelper.Category.InsertCategory();
             Categories = new List<Model.Helper.SPHelper.Category.InsertCategory>();
             Ref_validation = new View.Validation();
            
             DeleteCategories = new List<Model.Helper.SPHelper.Category.DeleteCategory>();
-            Ref_UpdateCategory = new Model.Helper.SPHelper.Category.UpdateCategory();
+            //Ref_UpdateCategory = new Model.Helper.SPHelper.Category.UpdateCategory();
             Updates = new List<Model.Helper.SPHelper.Category.UpdateCategory>();
         }
         #endregion
@@ -66,6 +65,7 @@ namespace DigiKala
             if (Ref_validation.CategoryNameValidation(txtName.Text) && 
                 Ref_validation.CategorydescriptionsValidation(txtDescriptions.Text))
             {
+                Ref_InsertCategory = new Model.Helper.SPHelper.Category.InsertCategory();
                 Ref_InsertCategory.CategoryName = txtName.Text;
                 Ref_InsertCategory.Descriptions = txtDescriptions.Text;
                 Categories.Add(Ref_InsertCategory);
@@ -147,6 +147,7 @@ namespace DigiKala
             if (Ref_validation.CategoryNameValidation(txtName.Text) &&
                 Ref_validation.CategorydescriptionsValidation(txtDescriptions.Text))
             {
+                Ref_UpdateCategory = new Model.Helper.SPHelper.Category.UpdateCategory();
                 Ref_UpdateCategory.Id = Convert.ToInt32(dataGridView1[0, dataGridView1.CurrentRow.Index].Value);
                 Ref_UpdateCategory.CategoryName = txtName.Text;
                 Ref_UpdateCategory.Descriptions = txtDescriptions.Text;
