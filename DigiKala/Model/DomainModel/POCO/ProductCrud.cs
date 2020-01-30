@@ -96,5 +96,31 @@ namespace DigiKala.Model.DomainModel.POCO
             }
         }
         #endregion
+
+        #region [-  UpdateBySp(List<Model.Helper.SPHelper.Product.UpdateProduct> listUpdateProduct) -]
+        public void UpdateBySp(List<Model.Helper.SPHelper.Product.UpdateProduct> listUpdateProduct)
+        {
+            using (var context = new DTO.EF.DigiKalaEntities())
+            {
+                try
+                {
+                    context.Database.ExecuteSqlCommand(Model.Helper.SPHelper.Product.ProductSpHelper.Usp_Product_Update,
+                  Model.Helper.SPHelper.Product.ProductSpHelper.SetUpdateParameters(listUpdateProduct));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (context != null)
+                    {
+                        context.Dispose();
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }

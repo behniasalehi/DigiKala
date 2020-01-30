@@ -37,11 +37,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{816C
 		usp_Insert_Product.sql = usp_Insert_Product.sql
 		usp_Select_CategoryName.sql = usp_Select_CategoryName.sql
 		usp_Select_Product.sql = usp_Select_Product.sql
+		usp_Update_Product.sql = usp_Update_Product.sql
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{A4674AE9-ADC5-40C8-B9EE-516B67ECADED}"
 	ProjectSection(SolutionItems) = preProject
 		udt_Insert_Product.sql = udt_Insert_Product.sql
+		udt_Update_Product.sql = udt_Update_Product.sql
 	EndProjectSection
 EndProject
 Global
