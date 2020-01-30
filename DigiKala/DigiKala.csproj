@@ -96,7 +96,9 @@
     <Compile Include="Model\Helper\SPHelper\Category\InsertCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\SelectCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\UpdateCategory.cs" />
+    <Compile Include="Model\Helper\SPHelper\Product\InsertProduct.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\ProductSpHelper.cs" />
+    <Compile Include="Model\Helper\SPHelper\Product\SelectCategoryName.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\SelectProduct.cs" />
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
@@ -106,6 +108,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectCategory.Designer.cs">
+      <DependentUpon>SelectCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\Category\CategoryViewModel.cs" />
     <Compile Include="ViewModel\Product\ProductViewModel.cs" />
     <Compile Include="View\Validation.cs" />
@@ -127,6 +135,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SelectCategory.resx">
+      <DependentUpon>SelectCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Model\DomainModel\DTO\EF\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

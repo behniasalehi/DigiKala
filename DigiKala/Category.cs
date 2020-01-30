@@ -19,9 +19,7 @@ namespace DigiKala
             Ref_CategoryViewModel = new ViewModel.Category.CategoryViewModel();
             Categories = new List<Model.Helper.SPHelper.Category.InsertCategory>();
             Ref_validation = new View.Validation();
-           
             DeleteCategories = new List<Model.Helper.SPHelper.Category.DeleteCategory>();
-            //Ref_UpdateCategory = new Model.Helper.SPHelper.Category.UpdateCategory();
             Updates = new List<Model.Helper.SPHelper.Category.UpdateCategory>();
         }
         #endregion
