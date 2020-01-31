@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DigiKala.Model.Helper;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,15 +45,41 @@ namespace DigiKala.Model.DomainModel.POCO
         }
         #endregion
         #region [- SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) -]
-        public void SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
+        public string SaveBySp(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
         {
           
             using (var context = new DTO.EF.DigiKalaEntities())
             {
                 try
                 {
-                 context.Database.ExecuteSqlCommand(Model.Helper.SPHelper.Category.CategorySpHelper.Usp_Category_Insert,
-                  Model.Helper.SPHelper.Category.CategorySpHelper.SetInsertParameters(listInsertCategory)).ToString();
+                    #region [- SqlParameter -]
+                    SqlParameter categoryListParameter = new SqlParameter()
+                    {
+                        ParameterName = "@CategoryInfo",
+                        SqlDbType = System.Data.SqlDbType.Structured,
+                        TypeName = "dbo.udt_Insert_Category",
+                        Value = listInsertCategory.ToDataTable()
+                    };
+                    SqlParameter outputParameter = new SqlParameter()
+                    {
+                        ParameterName = "@message",
+                        SqlDbType = SqlDbType.NVarChar,
+                        Size = -1,
+                        Direction = ParameterDirection.Output,
+                        Value = DBNull.Value
+                    };
+
+                    #endregion
+                    #region [- parameters  -]
+                    object[] parameters =
+                       {
+                categoryListParameter,outputParameter
+            };
+                    #endregion
+                    
+                    context.Database.ExecuteSqlCommand("dbo.usp_Insert_Category @CategoryInfo, @message OUTPUT", parameters);
+                    var message = outputParameter.Value;
+                    return message.ToString() ;
                 }
                 catch (Exception)
                 {

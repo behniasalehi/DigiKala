@@ -22,9 +22,9 @@ namespace DigiKala.ViewModel.Category
         }
         #endregion
         #region [- Save(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory) -]
-        public void Save(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
+        public string Save(List<Model.Helper.SPHelper.Category.InsertCategory> listInsertCategory)
         {
-            Ref_CatgoryCrud.SaveBySp(listInsertCategory);
+          return  Ref_CatgoryCrud.SaveBySp(listInsertCategory);
         }
         #endregion
         #region [- Edit(List<Model.Helper.SPHelper.Category.UpdateCategory> listUpdateCategory) -]

@@ -17,7 +17,7 @@ namespace DigiKala.Model.Helper.SPHelper.Category
         }
         #endregion
         public const string Usp_Category_Select = "Exec dbo.usp_Select_Category";
-        public const string Usp_Category_Insert = "dbo.usp_Insert_Category @CategoryInfo";
+        public const string Usp_Category_Insert = "dbo.usp_Insert_Category @CategoryInfo, @message OUTPUT ";
         public const string Usp_Category_Update = "dbo.usp_Update_Category @CategoryInfoUpdate";
         public const string Usp_Category_Delete = "dbo.usp_Delete_Category @CategoryInfoDelete";
 
@@ -32,13 +32,20 @@ namespace DigiKala.Model.Helper.SPHelper.Category
                 TypeName = "dbo.udt_Insert_Category",
                 Value = listInsertCategory.ToDataTable()
             };
+            SqlParameter outputParameter = new SqlParameter()
+            {
+                ParameterName = "@message",
+                SqlDbType = SqlDbType.NVarChar,
+                Size = -1,
+                Direction = ParameterDirection.Output,
+                Value = DBNull.Value
+            };
 
-            
             #endregion
             #region [- parameters  -]
             object[] parameters =
                {
-                categoryListParameter
+                categoryListParameter,outputParameter
             };
             #endregion
             return parameters;

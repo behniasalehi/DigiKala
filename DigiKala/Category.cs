@@ -67,7 +67,8 @@ namespace DigiKala
                 Ref_InsertCategory.CategoryName = txtName.Text;
                 Ref_InsertCategory.Descriptions = txtDescriptions.Text;
                 Categories.Add(Ref_InsertCategory);
-                Ref_CategoryViewModel.Save(Categories);
+               var message =  Ref_CategoryViewModel.Save(Categories);
+                MessageBox.Show(message);
                 Categories.Clear();
                 dataGridView1.DataSource = Ref_CategoryViewModel.FillGrid();
                 ClearAll();
