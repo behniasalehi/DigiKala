@@ -122,5 +122,30 @@ namespace DigiKala.Model.DomainModel.POCO
             }
         }
         #endregion
+        #region [- DeleteBySp(List<Model.Helper.SPHelper.Product.DeleteProduct> listDeleteProduct) -]
+        public void DeleteBySp(List<Model.Helper.SPHelper.Product.DeleteProduct> listDeleteProduct)
+        {
+            using (var context = new DTO.EF.DigiKalaEntities())
+            {
+                try
+                {
+                    context.Database.ExecuteSqlCommand(Model.Helper.SPHelper.Product.ProductSpHelper.Usp_Product_Delete,
+                  Model.Helper.SPHelper.Product.ProductSpHelper.SetDeleteParameters(listDeleteProduct));
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    if (context != null)
+                    {
+                        context.Dispose();
+                    }
+                }
+            }
+        }
+        #endregion
     }
 }

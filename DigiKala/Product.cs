@@ -24,6 +24,8 @@ namespace DigiKala
             Products = new List<Model.Helper.SPHelper.Product.InsertProduct>();
             Ref_UpdateProduct = new Model.Helper.SPHelper.Product.UpdateProduct();
             Updates = new List<Model.Helper.SPHelper.Product.UpdateProduct>();
+            DeleteProducts = new List<Model.Helper.SPHelper.Product.DeleteProduct>();
+
         }
         #endregion
         #region [- props -]
@@ -33,6 +35,8 @@ namespace DigiKala
         public List<Model.Helper.SPHelper.Product.InsertProduct> Products { get; set; }
         public Model.Helper.SPHelper.Product.UpdateProduct Ref_UpdateProduct { get; set; }
         public List<Model.Helper.SPHelper.Product.UpdateProduct> Updates { get; set; }
+        public Model.Helper.SPHelper.Product.DeleteProduct Ref_DeleteProduct { get; set; }
+        public List<Model.Helper.SPHelper.Product.DeleteProduct> DeleteProducts { get; set; }
         #endregion
         #region [- ClearAll -]
         public void ClearAll()
@@ -141,6 +145,7 @@ namespace DigiKala
                 Ref_InsertProduct.UnitPrice = Convert.ToDecimal(txtUnitPrice.Text);
                 Products.Add(Ref_InsertProduct);
                 Ref_ProductViewModel.Save(Products);
+                Products.Clear();
                 ClearAll();
                 dataGridView2.DataSource = Ref_ProductViewModel.FillGrid();
             }
@@ -189,6 +194,23 @@ namespace DigiKala
             dataGridView2.DataSource = Ref_ProductViewModel.FillGrid();
 
             btnSaveChanges.Enabled = false;
+        }
+        #endregion
+
+        #region [- btnDelete_Click -]
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+            {
+                int value = Convert.ToInt32(row.Cells[0].Value);
+
+                Ref_DeleteProduct = new Model.Helper.SPHelper.Product.DeleteProduct();
+                Ref_DeleteProduct.Id = value;
+                DeleteProducts.Add(Ref_DeleteProduct);
+
+            }
+            Ref_ProductViewModel.Delete(DeleteProducts);
+            dataGridView2.DataSource = Ref_ProductViewModel.FillGrid();
         } 
         #endregion
     }

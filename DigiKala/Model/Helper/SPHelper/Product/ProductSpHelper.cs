@@ -13,6 +13,7 @@ namespace DigiKala.Model.Helper.SPHelper.Product
         public const string Usp_Product_Select = "Exec dbo.usp_Select_Product";
         public const string Usp_Product_Insert = "dbo.usp_Insert_Product @ProductInfo";
         public const string Usp_Product_Update = "dbo.usp_Update_Product @UpdateProduct";
+        public const string Usp_Product_Delete = "dbo.usp_Delete_Product @DeleteProduct";
 
 
         #region [-   SetInsertParameters(List<InsertProduct> listInsertProduct) -]
@@ -52,6 +53,27 @@ namespace DigiKala.Model.Helper.SPHelper.Product
             object[] parameters =
                {
                 productListupdateParameter
+            };
+            #endregion
+            return parameters;
+        }
+        #endregion
+        #region [-   SetInsertParameters(List<InsertProduct> listInsertProduct) -]
+        public static object[] SetDeleteParameters(List<DeleteProduct> listDeleteProduct)
+        {
+            #region [- SqlParameter -]
+            SqlParameter productDeleteParameter = new SqlParameter()
+            {
+                ParameterName = "@DeleteProduct",
+                SqlDbType = System.Data.SqlDbType.Structured,
+                TypeName = "dbo.udt_Delete_Product",
+                Value = listDeleteProduct.ToDataTable()
+            };
+            #endregion
+            #region [- parameters  -]
+            object[] parameters =
+               {
+                productDeleteParameter
             };
             #endregion
             return parameters;

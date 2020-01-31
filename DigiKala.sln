@@ -34,6 +34,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Category", "Category", "{07
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{816C0179-2C23-41A7-9BB5-02FA6CFD61EB}"
 	ProjectSection(SolutionItems) = preProject
+		usp_Delete_Product.sql = usp_Delete_Product.sql
 		usp_Insert_Product.sql = usp_Insert_Product.sql
 		usp_Select_CategoryName.sql = usp_Select_CategoryName.sql
 		usp_Select_Product.sql = usp_Select_Product.sql
@@ -42,6 +43,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{816C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{A4674AE9-ADC5-40C8-B9EE-516B67ECADED}"
 	ProjectSection(SolutionItems) = preProject
+		udt_Delete__Product.sql = udt_Delete__Product.sql
 		udt_Insert_Product.sql = udt_Insert_Product.sql
 		udt_Update_Product.sql = udt_Update_Product.sql
 	EndProjectSection

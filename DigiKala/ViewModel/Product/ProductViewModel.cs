@@ -33,11 +33,16 @@ namespace DigiKala.ViewModel.Product
             Ref_ProductCrud.SaveBySp(listInsertProduct);
         }
         #endregion
-
         #region [- Edit(List<Model.Helper.SPHelper.Product.UpdateProduct> listUpdateProduct) -]
         public void Edit(List<Model.Helper.SPHelper.Product.UpdateProduct> listUpdateProduct)
         {
             Ref_ProductCrud.UpdateBySp(listUpdateProduct);
+        }
+        #endregion
+        #region [- Delete(List<Model.Helper.SPHelper.Category.DeleteCategory> listDeleteCategory) -]
+        public void Delete(List<Model.Helper.SPHelper.Product.DeleteProduct> listDeleteProduct)
+        {
+            Ref_ProductCrud.DeleteBySp(listDeleteProduct);
         }
         #endregion
     }

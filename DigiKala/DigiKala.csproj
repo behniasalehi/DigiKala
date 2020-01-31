@@ -96,6 +96,7 @@
     <Compile Include="Model\Helper\SPHelper\Category\InsertCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\SelectCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\UpdateCategory.cs" />
+    <Compile Include="Model\Helper\SPHelper\Product\DeleteProduct.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\InsertProduct.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\ProductSpHelper.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\SelectCategoryName.cs" />
