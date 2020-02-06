@@ -14,6 +14,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tables", "Tables", "{FF1D61EB-93BF-4C4C-9A16-BAF408B508AF}"
 	ProjectSection(SolutionItems) = preProject
 		usp_Create_Category_Table.sql = usp_Create_Category_Table.sql
+		usp_Create_OrderDetail_Table.sql = usp_Create_OrderDetail_Table.sql
+		usp_Create_OrderMaster_Table.sql = usp_Create_OrderMaster_Table.sql
+		usp_Create_Person_Table.sql = usp_Create_Person_Table.sql
 		usp_Create_Product_Table.sql = usp_Create_Product_Table.sql
 	EndProjectSection
 EndProject
@@ -48,6 +51,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{A467
 		udt_Update_Product.sql = udt_Update_Product.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{591B639E-D326-4A06-92CC-3B4B3E4088E4}"
+	ProjectSection(SolutionItems) = preProject
+		udt_Insert_OrderDetail.sql = udt_Insert_OrderDetail.sql
+		udt_Insert_OrderMaster.sql = udt_Insert_OrderMaster.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{EB92D7EA-6810-4F7E-A93B-4C291EACC6FB}"
+	ProjectSection(SolutionItems) = preProject
+		usp_Insert_Order.sql = usp_Insert_Order.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +84,8 @@ Global
 		{07A808D8-5BE5-420A-B2A0-19961D3C7D08} = {F11BE3B2-0673-4C5C-BCE4-F737CD4F2D05}
 		{816C0179-2C23-41A7-9BB5-02FA6CFD61EB} = {3114BF92-540E-4C81-ABF2-C958C86B2B3E}
 		{A4674AE9-ADC5-40C8-B9EE-516B67ECADED} = {F11BE3B2-0673-4C5C-BCE4-F737CD4F2D05}
+		{591B639E-D326-4A06-92CC-3B4B3E4088E4} = {F11BE3B2-0673-4C5C-BCE4-F737CD4F2D05}
+		{EB92D7EA-6810-4F7E-A93B-4C291EACC6FB} = {3114BF92-540E-4C81-ABF2-C958C86B2B3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9463A3A5-86C6-492D-B53D-D17A8746C06A}

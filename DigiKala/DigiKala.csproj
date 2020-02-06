@@ -89,6 +89,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\DomainModel\POCO\CategoryCrud.cs" />
+    <Compile Include="Model\DomainModel\POCO\OrderCrud.cs" />
     <Compile Include="Model\DomainModel\POCO\ProductCrud.cs" />
     <Compile Include="Model\Helper\ModelHelper.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\CategorySpHelper.cs" />
@@ -96,12 +97,21 @@
     <Compile Include="Model\Helper\SPHelper\Category\InsertCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\SelectCategory.cs" />
     <Compile Include="Model\Helper\SPHelper\Category\UpdateCategory.cs" />
+    <Compile Include="Model\Helper\SPHelper\Order\InsertOrderDetail.cs" />
+    <Compile Include="Model\Helper\SPHelper\Order\InsertOrderMaster.cs" />
+    <Compile Include="Model\Helper\SPHelper\Order\OrderSPHelper.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\DeleteProduct.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\InsertProduct.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\ProductSpHelper.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\SelectCategoryName.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\SelectProduct.cs" />
     <Compile Include="Model\Helper\SPHelper\Product\UpdateProduct.cs" />
+    <Compile Include="Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +127,7 @@
       <DependentUpon>SelectCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Category\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\Order\OrderViewModel.cs" />
     <Compile Include="ViewModel\Product\ProductViewModel.cs" />
     <Compile Include="View\Validation.cs" />
     <EmbeddedResource Include="Category.resx">
@@ -124,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>

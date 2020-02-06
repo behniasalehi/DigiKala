@@ -32,6 +32,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnCategory = new System.Windows.Forms.ToolStripButton();
             this.btnProduct = new System.Windows.Forms.ToolStripButton();
+            this.btnOrder = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +42,8 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCategory,
-            this.btnProduct});
+            this.btnProduct,
+            this.btnOrder});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(74, 450);
@@ -68,6 +70,16 @@
             this.btnProduct.Text = "Product";
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
+            // btnOrder
+            // 
+            this.btnOrder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnOrder.Image")));
+            this.btnOrder.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(71, 24);
+            this.btnOrder.Text = "Order";
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -89,6 +101,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnCategory;
         private System.Windows.Forms.ToolStripButton btnProduct;
+        private System.Windows.Forms.ToolStripButton btnOrder;
     }
 }
 

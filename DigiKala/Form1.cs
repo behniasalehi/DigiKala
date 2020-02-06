@@ -34,6 +34,15 @@ namespace DigiKala
             Product ref_Product = new Product();
             ref_Product.MdiParent = this;
             ref_Product.Show();
+        }
+        #endregion
+
+        #region [- btnOrder_Click -]
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            Order ref_Order = new Order();
+            ref_Order.MdiParent = this;
+            ref_Order.Show();
         } 
         #endregion
     }
